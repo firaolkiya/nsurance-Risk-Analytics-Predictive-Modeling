@@ -5,6 +5,7 @@ Main entry point for Insurance Analytics Project
 import sys
 import os
 from eda import InsuranceEDA
+from statistical_analysis import InsuranceHypothesisTesting
 
 def main():
     """
@@ -13,7 +14,7 @@ def main():
     print("=" * 60)
     print("INSURANCE ANALYTICS PROJECT")
     print("=" * 60)
-    print("Task 1: Exploratory Data Analysis (EDA)")
+    print("Task 3: Statistical Hypothesis Testing")
     print("=" * 60)
     
     # Check if data file exists
@@ -62,17 +63,23 @@ def main():
         print("\n10. Generating comprehensive report...")
         report_path = eda.generate_report()
         
+        # Run hypothesis testing
+        print("\n11. Running hypothesis tests...")
+        hypothesis_tester = InsuranceHypothesisTesting(df)
+        results = hypothesis_tester.run_all_tests()
+        
         print("\n" + "=" * 60)
         print("ANALYSIS COMPLETE!")
         print("=" * 60)
         print(f"✓ EDA analysis completed successfully")
+        print(f"✓ Hypothesis testing completed")
         print(f"✓ Visualizations saved to 'plots/' directory")
-        print(f"✓ Report generated: {report_path}")
+        print(f"✓ Reports generated: {report_path}")
         print("\nNext steps:")
-        print("1. Review the generated plots and report")
+        print("1. Review the generated plots and reports")
         print("2. Commit your changes to git")
         print("3. Push to your GitHub repository")
-        print("4. Continue with Task 2: Statistical Modeling")
+        print("4. Continue with advanced modeling")
         
     except Exception as e:
         print(f"Error during analysis: {e}")
