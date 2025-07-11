@@ -6,6 +6,7 @@ venv/
 data/*.txt
 data/*.csv
 data/*.json
+data/
 
 # Allow DVC files
 !data/*.dvc
