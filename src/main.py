@@ -6,6 +6,7 @@ import sys
 import os
 from eda import InsuranceEDA
 from statistical_analysis import InsuranceHypothesisTesting
+from predictive_modeling import InsurancePredictiveModeling
 
 def main():
     """
@@ -14,7 +15,7 @@ def main():
     print("=" * 60)
     print("INSURANCE ANALYTICS PROJECT")
     print("=" * 60)
-    print("Task 3: Statistical Hypothesis Testing")
+    print("Task 4: Predictive Modeling for Risk-Based Pricing")
     print("=" * 60)
     
     # Check if data file exists
@@ -68,18 +69,24 @@ def main():
         hypothesis_tester = InsuranceHypothesisTesting(df)
         results = hypothesis_tester.run_all_tests()
         
+        # Run predictive modeling
+        print("\n12. Building predictive models...")
+        modeler = InsurancePredictiveModeling(df)
+        model_results = modeler.run_all_models()
+        
         print("\n" + "=" * 60)
         print("ANALYSIS COMPLETE!")
         print("=" * 60)
         print(f"✓ EDA analysis completed successfully")
         print(f"✓ Hypothesis testing completed")
+        print(f"✓ Predictive modeling completed")
         print(f"✓ Visualizations saved to 'plots/' directory")
         print(f"✓ Reports generated: {report_path}")
         print("\nNext steps:")
         print("1. Review the generated plots and reports")
         print("2. Commit your changes to git")
         print("3. Push to your GitHub repository")
-        print("4. Continue with advanced modeling")
+        print("4. Deploy models for production use")
         
     except Exception as e:
         print(f"Error during analysis: {e}")
