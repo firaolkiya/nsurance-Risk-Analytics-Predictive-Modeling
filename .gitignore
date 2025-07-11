@@ -6,10 +6,14 @@ venv/
 data/*.txt
 data/*.csv
 data/*.json
-data/
 
 # Allow DVC files
 !data/*.dvc
+
+# DVC storage (should not be pushed to GitHub)
+dvc_storage/
+.dvc/cache/
+.dvc/tmp/
 
 # Python
 __pycache__/
@@ -51,8 +55,4 @@ wheels/
 
 # OS
 .DS_Store
-Thumbs.db
-
-# DVC
-.dvc/tmp/
-.dvc/cache/                                                                                                                                                                                     
+Thumbs.db                                                                                                                                                                                     
