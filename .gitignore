@@ -1,3 +1,58 @@
-data/
+# Virtual environments
 env/
 venv/
+
+# Data files (tracked by DVC)
+data/*.txt
+data/*.csv
+data/*.json
+
+# Allow DVC files
+!data/*.dvc
+
+# DVC storage (should not be pushed to GitHub)
+dvc_storage/
+.dvc/cache/
+.dvc/tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db                                                                                                                                                                                     
